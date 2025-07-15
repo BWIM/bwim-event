@@ -282,14 +282,39 @@ function validateRegistrationForm(form) {
     // Validate radio buttons
     const participationRadios = form.querySelectorAll('input[name="participation"]');
     if (participationRadios.length > 0) {
-        const participationGroup = participationRadios[0].parentNode.parentNode;
-        if (!participationRadios[0].checked && !participationRadios[1].checked) {
+        // Check if at least one radio button is selected
+        const isAnySelected = Array.from(participationRadios).some(radio => radio.checked);
+        
+        if (!isAnySelected) {
             isValid = false;
-            participationGroup.classList.add('error');
-            const errorElement = document.createElement('div');
-            errorElement.className = 'error-message';
-            errorElement.textContent = 'Bitte wählen Sie eine Option.';
-            participationGroup.appendChild(errorElement);
+            
+            // Find the participation section to add error styling
+            const participationSection = form.querySelector('.participation-section');
+            if (participationSection) {
+                participationSection.classList.add('error');
+                
+                // Remove existing error message
+                const existingError = participationSection.querySelector('.error-message');
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                // Add new error message
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error-message';
+                errorElement.textContent = 'Bitte wählen Sie eine Option.';
+                participationSection.appendChild(errorElement);
+            }
+        } else {
+            // Remove error styling if valid
+            const participationSection = form.querySelector('.participation-section');
+            if (participationSection) {
+                participationSection.classList.remove('error');
+                const existingError = participationSection.querySelector('.error-message');
+                if (existingError) {
+                    existingError.remove();
+                }
+            }
         }
     }
     

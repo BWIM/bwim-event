@@ -281,14 +281,16 @@ function validateRegistrationForm(form) {
     
     // Validate radio buttons
     const participationRadios = form.querySelectorAll('input[name="participation"]');
-    const participationGroup = participationRadios[0].parentNode.parentNode;
-    if (!participationRadios[0].checked && !participationRadios[1].checked) {
-        isValid = false;
-        participationGroup.classList.add('error');
-        const errorElement = document.createElement('div');
-        errorElement.className = 'error-message';
-        errorElement.textContent = 'Bitte wählen Sie eine Option.';
-        participationGroup.appendChild(errorElement);
+    if (participationRadios.length > 0) {
+        const participationGroup = participationRadios[0].parentNode.parentNode;
+        if (!participationRadios[0].checked && !participationRadios[1].checked) {
+            isValid = false;
+            participationGroup.classList.add('error');
+            const errorElement = document.createElement('div');
+            errorElement.className = 'error-message';
+            errorElement.textContent = 'Bitte wählen Sie eine Option.';
+            participationGroup.appendChild(errorElement);
+        }
     }
     
     return isValid;

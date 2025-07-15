@@ -35,19 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
     if (registrationForm) {
         registrationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Don't prevent default - let FormSubmit handle the submission
+            // e.preventDefault();
             
             // Validate form
             if (!validateRegistrationForm(this)) {
+                e.preventDefault();
                 return;
             }
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
             
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
@@ -55,19 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Wird gesendet...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                // Show success message
-                showNotification('Anmeldung erfolgreich gesendet! Sie erhalten eine Bestätigung per E-Mail.', 'success');
-                
-                // Reset form
-                this.reset();
-                
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Form will be submitted to FormSubmit
+            // The success message will be shown via the _next parameter
         });
+    }
+
+    // Check if we should show success message (when redirected back from FormSubmit)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true' || window.location.hash === '#successMessage') {
+        showSuccessMessage();
     }
 
     // Form validation for registration form
@@ -257,6 +248,23 @@ function validateRegistrationField(field) {
     }
 
     return isValid;
+}
+
+// Function to show success message
+function showSuccessMessage() {
+    const successMessage = document.getElementById('successMessage');
+    const registrationForm = document.getElementById('registrationForm');
+    
+    if (successMessage && registrationForm) {
+        // Hide the form
+        registrationForm.style.display = 'none';
+        
+        // Show the success message
+        successMessage.style.display = 'block';
+        
+        // Scroll to the success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
 // Complete registration form validation

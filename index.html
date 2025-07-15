@@ -101,7 +101,20 @@
                     Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div class="registration-content">
-                    <form class="registration-form" id="registrationForm" action="https://formsubmit.co/mll@bw-im.de" method="POST" >
+                    <!-- Success Message Container -->
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        <div class="success-content">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Anmeldung erfolgreich!</h3>
+                            <p>Vielen Dank für Ihre Anmeldung. Sie erhalten eine Bestätigung per E-Mail.</p>
+                        </div>
+                    </div>
+
+                    <form class="registration-form" id="registrationForm" action="https://formsubmit.co/mll@bw-im.de" method="POST" target="_blank">
+                        <input type="hidden" name="_next" value="#successMessage">
+                        <input type="hidden" name="_subject" value="BWIM-Event Anmeldung">
+                        <input type="hidden" name="_template" value="table">
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="salutation">Ansprache*</label>
@@ -125,20 +138,6 @@
                             <label for="function">Funktion</label>
                             <input type="text" id="function" name="function">
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="street">Straße</label>
-                            <input type="text" id="street" name="street" required>
-                        </div> -->
-                        <!-- <div class="form-row">
-                            <div class="form-group">
-                                <label for="postalCode">PLZ</label>
-                                <input type="text" id="postalCode" name="postalCode" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">Ort</label>
-                                <input type="text" id="city" name="city" required>
-                            </div>
-                        </div> -->
                         <div class="form-group">
                             <label for="email">E-Mail*</label>
                             <input type="email" id="email" name="email" required>
@@ -164,6 +163,8 @@
                         
                         <div class="consent-section">
                             <label class="checkbox-label">
+                                <input type="checkbox" name="consent" required>
+                                <span class="checkbox-custom"></span>
                                 <span class="consent-text">
                                     Mit der Anmeldung bestätige ich, dass meine Daten für die Veranstaltungsorganisation verarbeitet werden. <br> Ich stimme der Veröffentlichung von Foto- und Videoaufnahmen zu Öffentlichkeitsarbeit zu. 
                                 </span>

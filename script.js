@@ -35,14 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
     if (registrationForm) {
         registrationForm.addEventListener('submit', function(e) {
-            // Don't prevent default - let FormSubmit handle the submission
-            // e.preventDefault();
-            
-            // Validate form
-            if (!validateRegistrationForm(this)) {
-                e.preventDefault();
-                return;
-            }
+            // Let the browser handle validation and FormSubmit handle the submission
+            // No custom validation needed
             
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
@@ -61,21 +55,21 @@ document.addEventListener('DOMContentLoaded', function() {
         showSuccessMessage();
     }
 
-    // Form validation for registration form
-    const formInputs = document.querySelectorAll('.registration-form input, .registration-form select');
-    formInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateRegistrationField(this);
-        });
-        
-        input.addEventListener('input', function() {
-            if (this.classList.contains('error')) {
-                validateRegistrationField(this);
-            }
-        });
-    });
+    // Remove all custom form validation - let browser handle it
+    // const formInputs = document.querySelectorAll('.registration-form input, .registration-form select');
+    // formInputs.forEach(input => {
+    //     input.addEventListener('blur', function() {
+    //         validateRegistrationField(this);
+    //     });
+    //     
+    //     input.addEventListener('input', function() {
+    //         if (this.classList.contains('error')) {
+    //             validateRegistrationField(this);
+    //         }
+    //     });
+    // });
 
-    // Radio button styling
+    // Radio button styling (keep this for visual feedback)
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     radioButtons.forEach(radio => {
         radio.addEventListener('change', function() {
@@ -87,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Checkbox styling
+    // Checkbox styling (keep this for visual feedback)
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
@@ -207,49 +201,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 });
 
-// Registration form validation function
-function validateRegistrationField(field) {
-    const value = field.value.trim();
-    let isValid = true;
-    let errorMessage = '';
-
-    // Remove existing error styling
-    field.classList.remove('error');
-    const existingError = field.parentNode.querySelector('.error-message');
-    if (existingError) {
-        existingError.remove();
-    }
-
-    // Validation rules
-    if (field.hasAttribute('required') && !value) {
-        isValid = false;
-        errorMessage = 'Dieses Feld ist erforderlich.';
-    } else if (field.type === 'email' && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            isValid = false;
-            errorMessage = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
-        }
-    } else if (field.name === 'postalCode' && value) {
-        const postalCodeRegex = /^\d{5}$/;
-        if (!postalCodeRegex.test(value)) {
-            isValid = false;
-            errorMessage = 'Bitte geben Sie eine gültige Postleitzahl ein (5 Ziffern).';
-        }
-    }
-
-    // Apply error styling if invalid
-    if (!isValid) {
-        field.classList.add('error');
-        const errorElement = document.createElement('div');
-        errorElement.className = 'error-message';
-        errorElement.textContent = errorMessage;
-        field.parentNode.appendChild(errorElement);
-    }
-
-    return isValid;
-}
-
 // Function to show success message
 function showSuccessMessage() {
     const successMessage = document.getElementById('successMessage');
@@ -267,59 +218,9 @@ function showSuccessMessage() {
     }
 }
 
-// Complete registration form validation
-function validateRegistrationForm(form) {
-    let isValid = true;
-    
-    // Validate all required fields
-    const requiredFields = form.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        if (!validateRegistrationField(field)) {
-            isValid = false;
-        }
-    });
-    
-    // Validate radio buttons
-    const participationRadios = form.querySelectorAll('input[name="participation"]');
-    if (participationRadios.length > 0) {
-        // Check if at least one radio button is selected
-        const isAnySelected = Array.from(participationRadios).some(radio => radio.checked);
-        
-        if (!isAnySelected) {
-            isValid = false;
-            
-            // Find the participation section to add error styling
-            const participationSection = form.querySelector('.participation-section');
-            if (participationSection) {
-                participationSection.classList.add('error');
-                
-                // Remove existing error message
-                const existingError = participationSection.querySelector('.error-message');
-                if (existingError) {
-                    existingError.remove();
-                }
-                
-                // Add new error message
-                const errorElement = document.createElement('div');
-                errorElement.className = 'error-message';
-                errorElement.textContent = 'Bitte wählen Sie eine Option.';
-                participationSection.appendChild(errorElement);
-            }
-        } else {
-            // Remove error styling if valid
-            const participationSection = form.querySelector('.participation-section');
-            if (participationSection) {
-                participationSection.classList.remove('error');
-                const existingError = participationSection.querySelector('.error-message');
-                if (existingError) {
-                    existingError.remove();
-                }
-            }
-        }
-    }
-    
-    return isValid;
-}
+// Remove all validation functions - browser handles validation now
+// function validateRegistrationField(field) { ... }
+// function validateRegistrationForm(form) { ... }
 
 // Notification system
 function showNotification(message, type = 'info') {

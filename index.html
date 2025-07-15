@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BWIM-Event - Anmeldung</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="shortcut icon" href="assets/logo.png">
+    
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -19,10 +25,7 @@
                         </div>
                         <div class="logo-text">
                             <h1 class="event-title">BWIM-Event</h1>
-                            <p class="event-subtitle">Einladungsdesign</p>
                             <div class="bwim-logo">
-                                <span class="bwim-text">BWIM</span>
-                                <p class="bwim-full">Baden-Württemberg Initiative für Nachhaltige Mobilität</p>
                             </div>
                         </div>
                     </div>
@@ -70,11 +73,11 @@
                         <h3>BWIM-Event</h3>
                         <div class="info-item">
                             <i class="fas fa-calendar"></i>
-                            <span>2.10.2025</span>
+                            <span>02. Oktober 2025</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Hochschule Karlsruhe, Foyer B gebäude</span>
+                            <span>Hochschule Karlsruhe, Foyer B Gebäude</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-clock"></i>
@@ -101,12 +104,12 @@
                     <form class="registration-form" id="registrationForm" action="https://formsubmit.co/mll@bw-im.de" method="POST" >
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="salutation">Herr/Frau/divers</label>
+                                <label for="salutation">Ansprache*</label>
                                 <select id="salutation" name="salutation" required>
                                     <option value="">Bitte wählen</option>
                                     <option value="herr">Herr</option>
                                     <option value="frau">Frau</option>
-                                    <option value="divers">divers</option>
+                                    <option value="divers">Divers</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -116,17 +119,17 @@
                         </div>
                         <div class="form-group">
                             <label for="institution">Institution</label>
-                            <input type="text" id="institution" name="institution" required>
+                            <input type="text" id="institution" name="institution">
                         </div>
                         <div class="form-group">
                             <label for="function">Funktion</label>
-                            <input type="text" id="function" name="function" required>
+                            <input type="text" id="function" name="function">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="street">Straße</label>
                             <input type="text" id="street" name="street" required>
-                        </div>
-                        <div class="form-row">
+                        </div> -->
+                        <!-- <div class="form-row">
                             <div class="form-group">
                                 <label for="postalCode">PLZ</label>
                                 <input type="text" id="postalCode" name="postalCode" required>
@@ -135,14 +138,14 @@
                                 <label for="city">Ort</label>
                                 <input type="text" id="city" name="city" required>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
-                            <label for="email">E-mail</label>
+                            <label for="email">E-Mail*</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="participation-section">
-                            <h4>Teilnahme</h4>
+                            <h4>Teilnahme*</h4>
                             <div class="radio-group">
                                 <label class="radio-label">
                                     <input type="radio" name="participation" value="yes" required>
@@ -161,12 +164,8 @@
                         
                         <div class="consent-section">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="consent" required>
-                                <span class="checkbox-custom"></span>
                                 <span class="consent-text">
-                                    Ich bin damit einverstanden, dass meine Daten für die Veranstaltungsorganisation 
-                                    verarbeitet werden. Ich stimme der Veröffentlichung von Foto- und Videoaufnahmen 
-                                    zu Öffentlichkeitsarbeit zu.
+                                    Mit der Anmeldung bestätige ich, dass meine Daten für die Veranstaltungsorganisation verarbeitet werden. <br> Ich stimme der Veröffentlichung von Foto- und Videoaufnahmen zu Öffentlichkeitsarbeit zu. 
                                 </span>
                             </label>
                         </div>
@@ -272,10 +271,10 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Social Media</h4>
+                    <h4>SOCIAL MEDIA</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/bwim/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/bw.im/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

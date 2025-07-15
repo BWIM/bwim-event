@@ -291,18 +291,6 @@ function validateRegistrationForm(form) {
         participationGroup.appendChild(errorElement);
     }
     
-    // Validate checkbox
-    const consentCheckbox = form.querySelector('input[name="consent"]');
-    const consentLabel = consentCheckbox.parentNode;
-    if (!consentCheckbox.checked) {
-        isValid = false;
-        consentLabel.classList.add('error');
-        const errorElement = document.createElement('div');
-        errorElement.className = 'error-message';
-        errorElement.textContent = 'Sie müssen der Datenschutzerklärung zustimmen.';
-        consentLabel.appendChild(errorElement);
-    }
-    
     return isValid;
 }
 

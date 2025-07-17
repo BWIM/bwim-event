@@ -556,6 +556,12 @@ body {
     align-items: center;
 }
 
+.consent-text {
+    font-size: 0.8rem;
+    color: #2a2b2d;
+    font-family: 'Corbel', sans-serif;
+}
+
 .visual-container {
     width: 300px;
     height: 300px;

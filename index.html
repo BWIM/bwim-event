@@ -60,12 +60,22 @@
                         </p>
                         <div class="speakers">
                             <div class="speaker">
-                                <h4>Christoph Hupfer</h4>
-                                <p>Institutsleiter</p>
+                                <div class="speaker-image">
+                                    <img src="assets/BWIM-Christoph-Hupfer.jpg" alt="Christoph Hupfer" class="speaker-img">
+                                </div>
+                                <div class="speaker-info">
+                                    <h4>Prof. Dr. Christoph Hupfer</h4>
+                                    <p>Institutsleiter</p>
+                                </div>
                             </div>
                             <div class="speaker">
-                                <h4>Markus Stöckner</h4>
-                                <p>Stv. Institutsleiter</p>
+                                <div class="speaker-image">
+                                    <img src="assets/BWIM-Markus-Stoeckner.jpg" alt="Markus Stöckner" class="speaker-img">
+                                </div>
+                                <div class="speaker-info">
+                                    <h4>Prof. Dr. Markus Stöckner</h4>
+                                    <p>Stv. Institutsleiter</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,8 +107,8 @@
             <div class="container">
                 <h2 class="section-title">ANMELDUNG</h2>
                 <p class="section-intro">
-                    Das ist ein Blindtext. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Bitte füllen Sie das Formular aus, um sich für das BWIM-Event zu registrieren.
+                    Für Fragen, Rückfragen und Anregungen können Sie sich an den Ansprechpartner wenden.
                 </p>
                 <div class="registration-content">
                     <!-- Success Message Container -->
@@ -110,7 +120,7 @@
                         </div>
                     </div>
 
-                    <form class="registration-form" id="registrationForm" action="https://formsubmit.co/anmeldung@bw-im.de" method="POST" target="_blank">
+                    <form class="registration-form" id="registrationForm" action="https://formsubmit.co/f88d715605fe33964549bffa22bd0b1c" method="POST" target="_blank">
                         <input type="hidden" name="_next" value="#successMessage">
                         <input type="hidden" name="_subject" value="BWIM-Event Anmeldung">
                         <input type="hidden" name="_template" value="table">
@@ -129,6 +139,14 @@
                                 <label for="title">Titel</label>
                                 <input type="text" id="title" name="title">
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Vorname*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nachname*</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="institution">Institution</label>
@@ -163,6 +181,7 @@
                         
                         <div class="consent-section">
                             <label class="checkbox-label">
+                                <input type="checkbox" name="consent" required>
                                 <span class="consent-text">
                                     Mit der Anmeldung bestätige ich, dass meine Daten für die Veranstaltungsorganisation verarbeitet werden. <br> Ich stimme der Veröffentlichung von Foto- und Videoaufnahmen zu Öffentlichkeitsarbeit zu. 
                                 </span>
@@ -190,9 +209,9 @@
                     <div class="program-visual">
                         <div class="visual-container">
                             <img src="assets/stock.jpg" alt="BWIM Event Programm" class="program-image">
-                            <div class="image-overlay">
+                            <!-- <div class="image-overlay">
                                 <i class="fas fa-play"></i>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="program-schedule">
@@ -206,15 +225,22 @@
                         <div class="schedule-item">
                             <div class="time">15:00 Uhr</div>
                             <div class="activity">
-                                <h4>BW.IMpact dsnjkdhsakhd</h4>
-                                <p>Das ist ein Blindtext. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h4>Eröffnung</h4>
+                                <p>Die feierliche Eröffnung des BWIM-Events mit Winfried Herrmann und Christoph Hupfer.</p>
                             </div>
                         </div>
                         <div class="schedule-item">
                             <div class="time">15:00 Uhr</div>
                             <div class="activity">
-                                <h4>BW.IMpact dsnjkdhsakhd</h4>
-                                <p>Das ist ein Blindtext. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h4>BW.IMpact</h4>
+                                <p>An verschiedenen Stationen stellt sich das BWIM mit interkativen Stationen, Projekten und Ideen vor.</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">16:00 Uhr</div>
+                            <div class="activity">
+                                <h4>Ausklang & Networking</h4>
+                                <p>Mit Getränken und Snacks können Sie sich mit den Teilnehmern und den Referenten austauschen.</p>
                             </div>
                         </div>
                     </div>
@@ -236,19 +262,14 @@
                         <div class="transport-section">
                             <h4>Anfahrt mit öffentlichen Verkehrsmitteln</h4>
                             <p>
-                                Das ist ein Blindtext. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                                commodo consequat.
+                                Die Stadt Karlsruhe ist hervorragend mit den öffentlichen Verkehrsmitteln erreichbar. Ab dem Karlsruher Hauptbahnhof können Sie mit der Linie 3,S1,S11 zur Haltestelle "Europaplatz" fahren. Von dort ist es ein ca. 10 Minuten Spaziergang bis zur Hochschule.
                             </p>
                         </div>
                         <div class="car-section">
                             <h4>Anfahrt mit dem PKW</h4>
                             <p>
-                                Das ist ein Blindtext. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                                commodo consequat.
+                                Für die Anreise mit dem PKW kann "Hochschule Karlsruhe" als Ziel verwendet werden.
+                                Das Parken ist direkt im Norden des B-Gebäudes auf dem Campus möglich.
                             </p>
                         </div>
                     </div>

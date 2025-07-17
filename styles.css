@@ -157,7 +157,7 @@ body {
 /* Welcome Section */
 .welcome {
     padding: 120px 0 80px;
-    background: #88b1be;
+    background: #ffcc00;
 }
 
 .welcome-content {
@@ -189,7 +189,56 @@ body {
     gap: 30px;
 }
 
-.speaker h4 {
+.speaker {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.speaker:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.speaker-image {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.speaker:hover .speaker-image {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.speaker-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.speaker:hover .speaker-img {
+    transform: scale(1.1);
+}
+
+.speaker-info {
+    flex: 1;
+}
+
+.speaker-info h4 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 5px;
@@ -197,10 +246,11 @@ body {
     font-family: 'Corbel', sans-serif;
 }
 
-.speaker p {
+.speaker-info p {
     color: #2a2b2d;
     font-size: 0.9rem;
     font-family: 'Corbel', sans-serif;
+    opacity: 0.8;
 }
 
 .event-info {
@@ -462,7 +512,7 @@ body {
 }
 
 .contact-person {
-    background: #88b1be;
+    background: #ffcc00;
     padding: 30px;
     border-radius: 10px;
     height: fit-content;
@@ -744,6 +794,25 @@ body {
     
     .speakers {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .speaker {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .speaker-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .speaker-info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .speaker-info p {
+        font-size: 0.85rem;
     }
     
     .section-title {
@@ -797,6 +866,24 @@ body {
     
     .logo-img {
         height: 35px;
+    }
+    
+    .speaker {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .speaker-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .speaker-info h4 {
+        font-size: 1rem;
+    }
+    
+    .speaker-info p {
+        font-size: 0.8rem;
     }
 }
 

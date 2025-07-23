@@ -157,12 +157,11 @@ body {
 /* Main container */
 main {
     position: relative;
-    padding-top: 80px; /* Account for fixed header */
 }
 
 /* Welcome Section */
 .welcome {
-    padding: 120px 0 80px;
+    padding: 160px 0 80px; /* 120px + 40px for header */
     background: #f0ecec;
 }
 
@@ -902,15 +901,11 @@ main {
     }
     
     .invitation-card {
-        padding: 40px 0;
-    }
-    
-    main {
-        padding-top: 60px; /* Smaller padding for mobile */
+        padding-top: 30px;
     }
     
     .welcome {
-        order: 2;
+        padding: 50px 0 60px; /* Reduced padding for smaller screens */
     }
     
     .program {
@@ -926,6 +921,7 @@ main {
     }
     
     .invitation-image {
+        padding-top: 80px;
         border-radius: 4px;
     }
     
@@ -1001,12 +997,9 @@ main {
     }
     
     .invitation-card {
-        padding: 30px 0;
+        padding-top: 40px;
     }
 
-    main {
-        padding-top: 50px; /* Even smaller padding for very small screens */
-    }
 
     .invitation-card-bottom {
         display: block;

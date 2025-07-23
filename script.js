@@ -11,6 +11,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Move invitation card to top on mobile
+    function moveInvitationCard() {
+        const invitationCard = document.querySelector('.invitation-card');
+        const main = document.querySelector('main');
+        
+        if (window.innerWidth <= 768) {
+            // On mobile, move to top
+            if (invitationCard && main.firstChild !== invitationCard) {
+                main.insertBefore(invitationCard, main.firstChild);
+            }
+        } else {
+            // On desktop, move back to original position (after welcome section)
+            const welcomeSection = document.querySelector('.welcome');
+            if (invitationCard && welcomeSection && invitationCard.previousElementSibling !== welcomeSection) {
+                welcomeSection.parentNode.insertBefore(invitationCard, welcomeSection.nextSibling);
+            }
+        }
+    }
+
+    // Run on load and resize
+    moveInvitationCard();
+    window.addEventListener('resize', moveInvitationCard);
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {

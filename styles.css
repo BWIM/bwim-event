@@ -154,6 +154,12 @@ body {
     transition: 0.3s;
 }
 
+/* Main container */
+main {
+    position: relative;
+    padding-top: 80px; /* Account for fixed header */
+}
+
 /* Welcome Section */
 .welcome {
     padding: 120px 0 80px;
@@ -254,6 +260,7 @@ body {
     color: #433143;
     font-family: 'Corbel', sans-serif;
 }
+
 .speaker-info p {
     color: #2a2b2d;
     font-size: 0.9rem;
@@ -299,7 +306,7 @@ body {
 /* Invitation Card Section */
 .invitation-card {
     padding: 60px 0;
-    background-color: #f8f9fa;
+    background-color: #F0ECEC;
 }
 
 .card-wrapper {
@@ -898,6 +905,26 @@ body {
         padding: 40px 0;
     }
     
+    main {
+        padding-top: 60px; /* Smaller padding for mobile */
+    }
+    
+    .welcome {
+        order: 2;
+    }
+    
+    .program {
+        order: 3;
+    }
+    
+    .registration {
+        order: 4;
+    }
+    
+    .directions {
+        order: 5;
+    }
+    
     .invitation-image {
         border-radius: 4px;
     }
@@ -975,6 +1002,17 @@ body {
     
     .invitation-card {
         padding: 30px 0;
+    }
+
+    main {
+        padding-top: 50px; /* Even smaller padding for very small screens */
+    }
+
+    .invitation-card-bottom {
+        display: block;
+    }
+    .invitation-card-top {
+        display: none;
     }
     
     .invitation-image {
